@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main()
+{
+  long long int i,j,k,l,m,n,p;
+  while(scanf("%lld",&n)!=EOF){
+  for(p=1;p<=n;p++){
+  scanf("%lld %lld",&i,&j);
+  if(i<j)
+  printf("impossible\n");
+  else
+  {
+   k=i+j;
+   if(k%2!=0)
+   printf("impossible\n");
+   else
+   {
+     l=k/2;
+     m=(i-j)/2;
+     printf("%lld %lld\n",l,m);
+   }
+  }
+  }
+  }
+}

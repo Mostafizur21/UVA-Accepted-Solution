@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main()
+{
+  long long int i,j,k,m,n;
+  while(scanf("%lld",&i)!=EOF){
+      m=0;
+  for(k=1;k<=i;k++)
+  {
+      m=m+(k*k*k);
+  }
+  printf("%lld\n",m);}
+  return 0;
+}

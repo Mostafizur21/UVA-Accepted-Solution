@@ -1,0 +1,39 @@
+#include<stdio.h>
+int main()
+{
+  long long int i,j,k,l,m,n,p,a,b,c;
+  while(scanf("%lld %lld %lld",&i,&j,&k)!=EOF){
+   if(i<k&&j<k){
+  l=i*i+j*j;
+  m=k*k;
+  if(l>0){
+  if(l==m)
+  printf("right\n");
+  else
+  printf("wrong\n");}
+  }
+  if(i<j&&k<j){
+   n=i*i+k*k;
+   p=j*j;
+   if(n>0){
+   if(n==p)
+   printf("right\n");
+   else
+   printf("wrong\n");
+   }
+  }
+  if(j<i&&k<i)
+  {
+    a=j*j+k*k;
+    b=i*i;
+    if(a>0)
+    {
+        if(a==b)
+        printf("right\n");
+        else
+        printf("wrong\n");
+    }
+  }
+  }
+  return 0;
+}

@@ -1,0 +1,10 @@
+#include<stdio.h>
+int main()
+{
+   long long int i,j,k,l,m,n;
+  while(scanf("%lld",&n)!=EOF){
+  if(n>0){
+  m=(n*(n+1)*(2*n+1))/6;
+  printf("%lld\n",m);}}
+  return 0;
+}

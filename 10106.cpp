@@ -1,0 +1,242 @@
+#include<iostream>
+#include<cstdio>
+#include<cstring>
+#include<map>
+#include<vector>
+#include<queue>
+#include<deque>
+#include<list>
+#include<stack>
+#include<algorithm>
+#include<cmath>
+#include<set>
+#include<cstdlib>
+#include<ctime>
+#include<cctype>
+#include<sstream>
+#include<utility>
+#include<complex>
+#include<cstring>
+
+using namespace std;
+
+int main()
+{
+    string a,b,e,f,g,st;
+    char c[100000],d[100000],c1[100000],d1[100000];
+    int i,j,k,len1,len2,m,n,p,q,r,carry,x,y,z,s,t,u,v,w,A,B,E,F;
+    while(cin>>a>>b)
+    {
+        k=q=carry=y=z=t=v=w=u=E=F=0;
+        for(r=0;r<a.size();r++)
+        {
+            if(a[r]=='0')
+            {
+                E=r;
+                continue;
+            }
+            else
+            {
+                t=1;
+                break;
+            }
+        }
+        if(E+1==a.size())
+        {
+            if((E==0)&&(a[E]=='0'))
+                a='0';
+            else if(E>0&&(E+1==a.size()))
+                a='0';
+            else
+                a=a;
+        }
+        else if(t==0)
+            a=a;
+        else
+        {
+            for(A=r;A<a.size();A++)
+                c1[v++]=a[A];
+            c1[v]='\0';
+            a=c1;
+        }
+        for(s=0;s<b.size();s++)
+        {
+            if(b[s]=='0')
+            {
+                 F=s;
+                continue;
+            }
+            else
+            {
+                u=1;
+                break;
+            }
+        }
+        if(F+1==b.size())
+        {
+            if((F==0)&&(b[F]=='0'))
+                b='0';
+            else if(F>0&&(F+1==b.size()))
+                b='0';
+            else
+                b=b;
+        }
+        else if(u==0)
+            b=b;
+        else
+        {
+            for(B=s;B<b.size();B++)
+                d1[w++]=b[B];
+            d1[w]='\0';
+            b=d1;
+        }
+        if(a=="0"||b=="0")
+            printf("0\n");
+        else
+        {
+            len1=a.size();
+            len2=b.size();
+            reverse(a.begin(),a.end());
+            reverse(b.begin(),b.end());
+            for(j=0;j<len2;j++)
+            {
+                k=0;
+                y=0;
+                z=0;
+                carry=0;
+                for(i=0;i<len1;i++)
+                {
+                    m=((a[i]-'0')*(b[j]-'0'))+carry;
+                    carry=0;
+                    if(m>9)
+                    {
+                        n=m%10;
+                        carry=m/10;
+                    }
+                    else
+                        n=m;
+                    if(j==0)
+                    {
+                       c[k++]=n+48;
+                    }
+                    else
+                    {
+                        if(z==0)
+                        for(x=0;x<j;x++)
+                        {
+                            d[y++]=48;
+                        }
+                        d[y++]=n+48;
+                         z=1;
+                    }
+                }
+                if(carry!=0&&j==0)
+                {
+                   c[k++]=carry+48;
+                   c[k]='\0';
+                }
+                if(carry==0&&j==0)
+                    c[k]='\0';
+                if(carry!=0&&j>0)
+                {
+                    d[y++]=carry+48;
+                    d[y]='\0';
+                }
+                if(carry==0&&j>0)
+                {
+                    d[y]='\0';
+                }
+                if(j>0)
+                {
+                    e=c;
+                    f=d;
+                    char carry1='0',c1[100000];
+                    string a1,b1,d1;
+                    int i1,j1,k1,m1,n1,len11,len21;
+                    len11=e.size();
+                    len21=f.size();
+                    a1=e;
+                    b1=f;
+                    k1=0;
+                   if(len21<len11)
+                    {
+                        for(i1=0;i1<len21;i1++)
+                        {
+                            m1=a1[i1]+b1[i1]+carry1-96;
+                            if(m1>57)
+                            {
+                                carry1='1';
+                                c1[k1++]=m1-10;
+
+                            }
+                            else
+                            {
+                                carry1='0';
+                                c1[k1++]=m1;
+                            }
+                        }
+                        for(i1=len21;i1<len11;i1++)
+                        {
+                            m1=a[i1]+carry1-48;
+                            if(m1>57)
+                            {
+                                carry1='1';
+                                c1[k1++]=m1-10;
+
+                            }
+                            else
+                            {
+                                carry1='0';
+                                c1[k1++]=m1;
+                            }
+                        }
+                        if(carry1=='1')
+                            c1[k1++]='1';
+                    }
+                else
+                {
+                    for(i1=0;i1<len11;i1++)
+                    {
+                        m1=a1[i1]+b1[i1]+carry1-96;
+                        if(m1>57)
+                        {
+                            carry1='1';
+                            c1[k1++]=m1-10;
+
+                        }
+                        else
+                        {
+                            carry1='0';
+                            c1[k1++]=m1;
+                        }
+                    }
+                    for(i1=len11;i1<len21;i1++)
+                    {
+                        m1=b1[i1]+carry1-48;
+                        if(m1>57)
+                        {
+                            carry1='1';
+                            c1[k1++]=m1-10;
+
+                        }
+                        else
+                        {
+                            carry1='0';
+                            c1[k1++]=m1;
+                        }
+                    }
+                    if(carry1=='1')
+                        c1[k1++]='1';
+                }
+                c1[k1]='\0';
+                g=c1;
+                strcpy(c,g.c_str());
+                }
+            }
+            st=c;
+            reverse(st.begin(),st.end());
+            cout<<st<<endl;
+        }
+    }
+    return 0;
+}

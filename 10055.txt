@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main()
+{
+ long long int i,j,k,l,m,n;
+ while(scanf("%lld %lld",&m,&n)!=EOF){
+ if(m>n){
+ j=m-n;
+ printf("%lld\n",j);}
+ else
+ {k=n-m;
+ printf("%lld\n",k);}}
+ return 0;
+}

@@ -1,0 +1,42 @@
+import java.math.BigInteger;
+import java.util.Scanner;
+
+
+class Main {
+	
+	public static void main(String[] args) {
+		
+		Scanner input = new Scanner(System.in);
+		int index=0;
+		BigInteger arr[][] = new BigInteger[110][110];
+		BigInteger Max =new BigInteger("-99999");
+		
+		while(input.hasNext())
+		{
+			String N = input.next(); 
+			if(N.equals("-999999"))
+			{
+				for(int i=1;i<index;i++)
+			    {
+			        int k=0;
+			        for(int j=i;j<index;j++)
+			        {
+			            arr[i][k]=arr[i-1][k].multiply(arr[0][j]);
+
+			            Max = Max.max(arr[i][k]);
+			            k++;
+			        }
+			    }
+				System.out.println(Max);
+				index=0;
+				Max =new BigInteger("-99999");
+			}
+			else
+			{
+				arr[0][index++] = new BigInteger(N);
+				Max = Max.max(arr[0][index-1]);
+			}
+		}
+	}
+
+}

@@ -1,0 +1,29 @@
+import java.math.BigInteger;
+import java.util.Scanner;
+
+
+class Main {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		int N = in.nextInt();
+		int F = in.nextInt();
+		int cases=0;
+		BigInteger average = BigInteger.ONE;
+		while(N!=0||F!=0)
+		{
+			BigInteger sum = BigInteger.ZERO;
+			for(int c = 0;c<N;c++)
+			{
+				BigInteger A = in.nextBigInteger();
+				sum = sum.add(A);
+			}
+			System.out.printf("Bill #%d costs ",++cases);
+			average = sum.divide(BigInteger.valueOf(F));
+			System.out.println(sum+": each friend should pay "+average+"\n");
+			N = in.nextInt();
+		    F = in.nextInt();
+		}
+	}
+
+}

@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main()
+{
+  int m,n,k1,k2,s,b,j,i;
+  for(i=1;;i++){
+  scanf("%d%d",&m,&n);
+  if(m&&n<0)
+  break;
+  else
+  {
+  if(m<n)
+  {
+      s=m;
+      b=n;
+  }
+  else
+  {
+      s=n;b=m;
+  }
+  k1=100+s-b;
+  k2=b-s;
+  if(k1<k2)
+  printf("%d\n",k1);
+  else
+  printf("%d\n",k2);}}
+  return 0;
+}

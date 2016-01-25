@@ -1,0 +1,33 @@
+#include<stdio.h>
+int main()
+{
+   long int i,j,k,l,m,n,p,q,r;
+  while(scanf("%ld",&m)!=EOF){
+  p=1;
+   for(n=1;n<=m;n++){
+  scanf("%ld %ld %ld",&i,&j,&k);
+  if(i>j&&i>k)
+  {
+    if(j>k)
+    printf("Case %ld: %ld\n",p++,j);
+    else
+    printf("Case %ld: %ld\n",p++,k);
+  }
+  else if(j>i&&j>k)
+  {
+      if(i>k)
+      printf("Case %ld: %ld\n",p++,i);
+      else
+      printf("Case %ld: %ld\n",p++,k);
+  }
+  else
+  {
+      if(i>j)
+      printf("Case %ld: %ld\n",p++,i);
+      else
+      printf("Case %ld: %ld\n",p++,j);
+  }
+   }
+  }
+  return 0;
+}

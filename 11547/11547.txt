@@ -1,0 +1,30 @@
+#include<stdio.h>
+
+int main()
+{
+    int i,j,a,b,c,d,e,g,h;
+    int str[101];
+    while(scanf("%d",&a)!=EOF){
+    for(i=1;i<=a;i++)
+    {
+       scanf("%d",&b);
+       if(b>=-1000&&b<=1000){
+       c=(((((b*567)/9)+7492)*235)/47)-498;
+
+     if(c<0) d=-c;
+     else d=c;
+
+     for(j=0;j<=100;j++)
+     {
+         e=d/10;
+         str[j]=d%10;
+         d=e;
+        if(e==0) break;
+     }
+
+
+   printf("%d\n",str[1]);
+
+    }}}
+return 0;
+}

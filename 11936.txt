@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main()
+{
+  int i,j,k,l,m,n,p;
+   while(scanf("%d\n",&k)!=EOF){
+  for(p=1;p<=k;p++){
+  scanf("%d %d %d",&l,&m,&n);
+  i=l+m;
+  if(i>n)
+  printf("OK\n");
+  else
+  printf("Wrong!!\n");}}
+  return 0;
+}

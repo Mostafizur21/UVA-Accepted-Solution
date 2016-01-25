@@ -1,0 +1,11 @@
+#include<stdio.h>
+int main()
+{
+  long long int i,j,k=91;
+  while(scanf("%lld",&i)!=EOF){
+  if(i<=100&&i>0)
+  printf("f91(%lld) = %lld\n",i,k);
+  else if(i>=101)
+  printf("f91(%lld) = %lld\n",i,(i-10));}
+  return 0;
+}
